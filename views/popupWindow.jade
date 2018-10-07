@@ -1,0 +1,8 @@
+script.template#popupWindow(type="text/html")
+    #content
+        .infoContent
+            | <% _.each(data, function(elem, index, list){ if(index=='id' || index=='polygon' || index=='createdAt' || index=='participantId') return;%>
+            div
+                strong <%= index %>:
+                | <% if(index.substr(-2) == 'At'){%>  <%= moment(elem).fromNow() %>  <% }else{ %><%= elem %> <% } %>
+            | <% }) %>

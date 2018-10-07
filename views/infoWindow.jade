@@ -1,0 +1,24 @@
+script.template#infoWindow(type="text/html")
+	.panel-title
+		a#minimize(href="#")
+		div#panel-title Info
+	#panel-body
+		.banner.active-alert
+			p.banner-info Tracking ...
+		.section.active-alert-info
+			.nav.alert-nav.active#alertTimer
+				p Next Alert at ...
+			.nav.phone-nav
+				p Tracking &nbsp;
+					span#phoneCounter 0
+					|  phones
+		.section
+			.tabs
+				a.active(href="#", data-nav="alert") Alerts
+				a(href="#", data-nav="phone") Phone
+		.tab-content
+			h2 Info
+			.nav.alert-nav.active
+				#alert_table.table-wrapper
+			.nav.phone-nav
+				#phone_table.table-wrapper

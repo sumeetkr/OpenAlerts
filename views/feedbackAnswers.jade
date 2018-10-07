@@ -1,0 +1,43 @@
+extends feedbackAdminLayout
+
+block content
+    .container
+        .row.col-sm-12
+            h2 Answers
+        .row
+            table.col-sm-12.table.table-hover.table-condensed
+                thead
+                    tr
+                        th.alertId MessageId
+                        th.participant PhoneId
+                        th.question Question
+                        th.answer Answer
+                    tr
+                        td.alertId
+                            .input-group
+                                input#alertId-filter.form-control(type=text, placeholder="Filter...")
+                                span.input-group-btn
+                                    button.btn.btn-default(type="button")
+                                        span.glyphicon.glyphicon-remove
+                        td.participant
+                            .input-group
+                                input#participant-filter.form-control(type=text, placeholder="Filter...")
+                                span.input-group-btn
+                                    button.btn.btn-default(type="button")
+                                        span.glyphicon.glyphicon-remove
+                        td.question
+                            .input-group
+                                input#question-filter.form-control(type=text, placeholder="Filter...")
+                                span.input-group-btn
+                                    button.btn.btn-default(type="button")
+                                        span.glyphicon.glyphicon-remove
+                        td.answer
+                tbody
+                    each answer in answers
+                        tr
+                            td.alertId #{answer.message.id}
+                            td.participant #{answer.phone.id}
+                            td.question #{answer.question.title}
+                            td.answer #{answer.answer}
+block scripts
+    script(src="/js/feedback-answers.js")

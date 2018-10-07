@@ -1,0 +1,15 @@
+.form-group
+   .col-xs-6
+      h4 Available Questions
+      div.available-questions
+            for question in questions
+                div.select-question
+                    span.question-id #{question.id}
+                    span #{question.title}
+   .col-xs-6
+      h4 Selected Questions
+      div.selected-questions
+            for question in selected
+                div.select-question
+                    span.question-id #{question.id}
+                    span #{question.title}

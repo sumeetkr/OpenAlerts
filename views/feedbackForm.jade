@@ -1,0 +1,54 @@
+doctype html
+html
+    head
+        title #{title}
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css", type="text/css")
+        link(rel="stylesheet", href="/css/feedback-form.css", type="text/css")
+    body
+        .container-fluid
+            .row
+                h1.col-xs-12 Alert Feedback
+            .row.progress
+                .progress-bar.progress-bar-success.progress-bar-striped.col-xs-12(role="progressbar", style="width: 0%;")
+            #alert.alert.alert-danger
+                .glyphicon.glyphicon-exclamation-sign(aria-hidden="true")
+                | Please enter a valid answer.
+            form#form.row(method="POST", action="/feedback/#{messageId}/#{phoneId}", autocomplete="off")
+                #question-0.question.current.form-group.col-xs-12
+                    p Please take a moment to submit your feedback for this alert. Thank you very much!
+                each question, idx in questions
+                    - var questionId = 'question-' + (idx+1)
+                    .question.form-group.col-xs-12(id="#{questionId}", class="#{question.mandatory ? 'mandatory' : ''}")
+                        .question-title #{question.title}
+                        p.help #{question.text}
+                        case question.type
+                            when 'TEXT'
+                                textarea.form-control(type="text", id="q-#{question.id}", name="question-#{question.id}")
+                            when 'SINGLE'
+                                each option in JSON.parse(question.options)
+                                    label.multiple-choice.well
+                                        input(type="radio", name="question-#{question.id}", value="#{option}")
+                                        span #{option}
+                            when 'MULTIPLE'
+                                each option in JSON.parse(question.options)
+                                    label.multiple-answer.well
+                                        input(type="checkbox", value="true", name="question-#{question.id}[#{option}]")
+                                        span #{option}
+                #footer.col-xs-12.well
+                    button#prev.pull-left.btn.btn-info(type="button")
+                        span.glyphicon.glyphicon-chevron-left
+                        span.btn-text Back
+                    button#next.pull-right.btn.btn-info(type="button")
+                        span.btn-text Next
+                        span.glyphicon.glyphicon-chevron-right
+                    button#submit.pull-right.btn.btn-success(type="submit")
+                        span.btn-text Submit
+                        span.glyphicon.glyphicon-ok
+
+block scripts
+    script(src="//code.jquery.com/jquery-2.1.1.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
+    script(type="text/javascript").
+        questions = !{JSON.stringify(questions)};
+    script(src="/js/feedback-form.js")

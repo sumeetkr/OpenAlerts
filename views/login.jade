@@ -1,0 +1,20 @@
+doctype html
+html
+	head
+		title WEA+
+		meta(name="viewport", content="initial-scale=1.0, user-scalable=no")
+		link(rel="stylesheet", href="lib/maps/css/ol.css", type="text/css")
+		link(rel="stylesheet", href="lib/bootstrap/css/bootstrap.min.css", type="text/css")
+		link(rel="stylesheet", href="css/bootstrap-datetimepicker.css", type="text/css")
+		link(rel='stylesheet', href='/css/style.css')
+		link(rel='stylesheet', href='/css/signin.css')
+	!= templates
+body
+	div.container
+		form(class="form-signin" action="/login" method="post")
+			h2(class="form-signin-heading") Please sign in
+			label(for="inputUsername" class="sr-only") Username:
+			input(id="inputUsername" class="form-control" name="username" placeholder="username" required="" autofocus="" type="text")
+			label(for="inputPassword" class="sr-only") Password:
+			input(id="inputPassword" class="form-control" name="password" placeholder="password" required="" type="password")
+			button(class="btn btn-lg btn-primary btn-block" type="submit") Sign in

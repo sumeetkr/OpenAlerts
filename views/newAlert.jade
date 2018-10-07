@@ -1,0 +1,133 @@
+script.template#newAlert(type="html/text")
+    form.form-horizontal(role="form", style="padding-left:20px;")
+        .control-group
+            label.control-label(for="incidentID") Incident ID :
+            .controls
+                select.form-control#incidentID
+        .control-group
+            label.control-label(for="campus") Campus :
+            .controls
+                select.form-control#campus
+        .control-group
+            label.control-label(for="alertScenarioId") Scenario :
+            .controls
+                input.form-control#alertScenarioId
+        .control-group
+            label.control-label(for="messageID") Message ID :
+            .controls
+                span.from-control#messageID
+        .control-group
+            label.control-label(for="messageType") Message Type
+            .controls
+                select.form-control#messageType
+        .control-group
+            label.control-label(for="polygon") Polygon : &nbsp;
+            .controls
+                button.btn.btn-info#drawPolygon(type="button") Draw
+                | &nbsp;
+                button.btn.btn-danger#removePolygon(type="button") Remove
+        .control-group
+            label.control-label(for="scope") Scope
+            .controls
+                select.form-control#alertScope
+        .control-group
+            label.control-label(for="status") Status
+            .controls
+                select.form-control#alertStatus
+        .control-group
+            label.control-label(for="category") Category
+            .controls
+                select.form-control#alertCategory
+        .control-group
+            label.control-label(for="eventType") Event Type
+            .controls
+                select.form-control#eventType
+        .control-group
+            label.control-label(for="responseType") Response Type
+            .controls
+                select.form-control#responseType
+        .control-group
+            label.control-label(for="urgency") Urgency
+            .controls
+                select.form-control#urgencyType
+        .control-group
+            label.control-label(for="severity") Severity
+            .controls
+                select.form-control#severityType
+        .control-group
+            label.control-label(for="headline") Headline
+            .controls
+                input.form-control#alertHeadline
+        .control-group
+            label.control-label(for="alertFormat") Options
+            .controls
+                .checkbox
+                    label
+                        input#alertActive(type="checkbox")
+                        | Enable Alert
+                br
+                .checkbox
+                    label
+                        input#alertMapOption(type="checkbox")
+                        | Show Map
+                br
+                .checkbox
+                    label
+                        input#alertVibrateOption(type="checkbox")
+                        | Vibrate
+                br
+                .checkbox
+                    label
+                        input#alertAudioOption(type="checkbox")
+                        | Text to Speech
+                br
+                .checkbox
+                    label
+                        input#alertContextAwareOption(type="checkbox")
+                        | Context Aware
+                br
+                .checkbox
+                    label
+                        input#alertGeoFilterOption(type="checkbox")
+                        | Geo Targeting
+                br
+                .checkbox
+                    label
+                        input#alertHistoryBasedFiltering(type="checkbox")
+                        | History Based Filtering
+                br
+                .checkbox
+                    label
+                        input#alertMotionPredictionBasedFiltering(type="checkbox")
+                        | Motion Prediction Based Filtering
+        .control-group
+            label.control-label(for="alertFeedbackForm") Feedback Form
+            .controls
+                select.form-control#alertFeedbackForm
+        .control-group
+            label.control-label(for="alertScheduledFor") Scheduled For
+            .controls
+                input.form-control#alertScheduledFor(type="text", data-date-format="YYYY-MM-DD HH:mm:ss")
+        .control-group
+            label.control-label(for="alertEndingAt") Ending At
+            .controls
+                .input-group.date#alertEndingAtPicker
+                    input.form-control#alertEndingAt(type="text", data-date-format="YYYY-MM-DD HH:mm:ss")
+                    span.input-group-addon
+                        span.glyphicon.glyphicon-calendar
+        .control-group
+            label.control-label(for="alertText") Description
+            .controls
+                textarea.form-control#alertText(rows="3")
+        .control-group
+            label.control-label(for="alertInstruction") Instruction
+            .controls
+                textarea.form-control#alertInstruction(rows="3")
+        .control-group
+            label.control-label(for="alertContact") Contact
+            .controls
+                input.form-control#alertContact(type="text", placeholder="911")
+        .control-group
+            button.btn.btn-primary#sendAlert(type="button") Save
+            | &nbsp;
+            button.btn.btn-danger#cancelAlert(type="button") Cancel

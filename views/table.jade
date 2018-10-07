@@ -1,0 +1,8 @@
+script.template#table(type="text/html")
+	table.table
+		thead
+			tr
+				| <% _.each(headers, function(value, key, list){ %>
+				th <%= value %>
+				| <% }) %>
+		tbody

@@ -1,0 +1,96 @@
+{
+  "messages": [
+    {
+      "messageType": "Alert",
+      "scope": "Public",
+      "status": "Actual",
+      "info": [
+        {
+          "certainty": "Observed",
+          "contact": "MIB",
+          "eventCategory": "Security",
+          "eventType": "Presidential",
+          "headline": "Alien attack!",
+          "eventDescription": "GroupA",
+          "expires": "2015-04-18T00:41:57.000Z",
+          "instruction": "Flee.",
+          "onset": "2015-04-18T00:11:57.000Z",
+          "responseType": "Shelter",
+          "urgency": "Future",
+          "severity": "Severe",
+          "areas": [
+            {
+              "polygon": [
+                {
+                  "lat": 37.382105298316304,
+                  "lng": -122.03679121110828
+                },
+                {
+                  "lat": 37.372283648974275,
+                  "lng": -122.04846418474108
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameter": {
+        "isMapToBeShown": false,
+        "isAlertActive": true,
+        "isPhoneExpectedToVibrate": false,
+        "isTextToSpeechExpected": false,
+        "geoFiltering": false,
+        "historyBasedFiltering": false,
+        "motionPredictionBasedFiltering": false,
+        "campus": "sv",
+        "scenarioId": 1
+      }
+    },
+    {
+      "messageType": "Alert",
+      "scope": "Public",
+      "status": "Actual",
+      "info": [
+        {
+          "certainty": "Observed",
+          "contact": "MIB",
+          "eventCategory": "Security",
+          "eventType": "Presidential",
+          "headline": "Alien attack!",
+          "eventDescription": "GroupB",
+          "expires": "2015-04-18T00:41:57.000Z",
+          "instruction": "Flee.",
+          "onset": "2015-04-18T00:11:57.000Z",
+          "responseType": "Shelter",
+          "urgency": "Future",
+          "severity": "Severe",
+          "areas": [
+            {
+              "polygon": [
+                {
+                  "lat": 37.382105298316304,
+                  "lng": -122.03679121110828
+                },
+                {
+                  "lat": 37.372283648974275,
+                  "lng": -122.04846418474108
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "parameter": {
+        "isMapToBeShown": true,
+        "isAlertActive": true,
+        "isPhoneExpectedToVibrate": false,
+        "isTextToSpeechExpected": false,
+        "geoFiltering": false,
+        "historyBasedFiltering": false,
+        "motionPredictionBasedFiltering": false,
+        "campus": "sv",
+        "scenarioId": 1
+      }
+    }
+  ]
+}

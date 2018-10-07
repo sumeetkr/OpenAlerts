@@ -1,0 +1,28 @@
+extends feedbackAdminLayout
+
+block content
+    .container
+        .row.col-sm-12
+            h2 Questions
+        .row.controls.col-sm-12
+                a.btn.btn-primary(href="./question/create") Create new Question
+        if questions.length == 0
+            .row
+                p.col-sm-12 There are no questions yet.
+        else
+            each question in questions
+                .row.col-sm-12.question.well(id="question-#{question.id}")
+                    p
+                        strong #{question.title}
+                        span.label.label-default #{question.type === 'TEXT' ? 'text' : question.type === 'SINGLE' ? 'Multiple Choice' : 'Multiple Answer'}
+                        button.btn.btn-xs.btn-danger.delete-question.pull-right(style="margin-left: 5px; padding: 5px; min-width: 50px;") Delete
+                        button.btn.btn-xs.btn-info.edit-question.pull-right(style="margin-left: 5px; padding: 5px;min-width: 50px;") Edit
+                    p #{question.text}
+                    if question.type === 'SINGLE' || question.type === 'MULTIPLE'
+                        if question.option
+                            ul
+                            each option in JSON.parse(question.options)
+                                li #{option}
+
+block scripts
+    script(src="/js/feedback-admin.js")

@@ -1,0 +1,28 @@
+doctype html
+html
+    head
+        title #{title}
+        meta(name="viewport", content="initial-scale=1.0, user-scalable=no")
+        link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css", type="text/css")
+        link(rel="stylesheet", href="/css/feedback-admin.css", type="text/css")
+
+!= templates
+body
+    .navbar.navbar-default(role="navigation")
+        .container
+            .navbar-header
+                a.navbar-brand(href="/admin/feedback") WEA+
+            div.collapse.navbar-collapse
+                ul.nav.navbar-nav
+                    li(class="#{title.indexOf('Questions') > 0 ? 'active' : ''}")
+                        a(href="/admin/feedback/question") Questions
+                    li(class="#{title.indexOf('Forms') > 0 ? 'active' : ''}")
+                        a(href="/admin/feedback/form") Forms
+                    li(class="#{title.indexOf('Answers') > 0 ? 'active' : ''}")
+                        a(href="/admin/feedback/answer") Answers
+    block content
+
+    script(src="//code.jquery.com/jquery-2.1.1.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js")
+    script(src="/js/jquery.serialize-object.min.js")
+    block scripts

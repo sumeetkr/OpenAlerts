@@ -1,0 +1,26 @@
+extends feedbackAdminLayout
+
+block content
+    .container
+        .row.col-sm-12
+            h2 Forms
+        .row.controls.col-sm-12
+            a.btn.btn-primary(href="./form/create") Create new Form
+        .row
+            table.col-sm-12.table.table-hover.table-condensed
+                thead
+                    tr
+                        th Id
+                        th Name
+                        th Questions
+                        th
+                tbody
+                    each form in forms
+                        tr
+                            td #{form.id}
+                            td #{form.name}
+                            td #{form.Questions ? form.Questions.length : '0'}
+                            td
+                                a.btn.btn-info(href="form/update?id=#{form.id}") edit
+                                a.btn.btn-danger(href="form/delete?id=#{form.id}" style="margin-left:15px") delete
+

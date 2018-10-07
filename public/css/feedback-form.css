@@ -1,0 +1,53 @@
+.btn-text {
+    font-size: 14px;
+    font-weight: 400;
+}
+
+#footer button {
+    padding: 8px 13px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    min-width: 95px;
+    position: relative;
+}
+
+#prev .glyphicon {
+    position: absolute;
+    left: 7px;
+    top: 10px;
+}
+
+#next .glyphicon, #submit .glyphicon {
+    position: absolute;
+    right: 7px;
+    top: 10px;
+}
+
+#prev, #submit, .question, #alert {
+     display: none;
+}
+
+.question.current {
+    display: block;
+}
+
+.question-title {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.mandatory > .question-title:after {
+    font-weight: bold;
+    color: red;
+    content: " *";
+}
+
+.multiple-choice, .multiple-answer {
+    display: block;
+    padding: 5px;
+    font-size: 1.2em;
+}
+
+.multiple-choice > span, .multiple-answer > span {
+    margin-left: 15px;
+}

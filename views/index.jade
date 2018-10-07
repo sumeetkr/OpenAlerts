@@ -1,0 +1,57 @@
+extends layout
+
+block content
+	// BEGIN CONTAINER
+	#container.row-fluid
+		// BEGIN SIDEBAR
+		#sidebar.nav-collapse.collapse
+			.sidebar-toggler.hidden-phone
+			.sidebar-menu.row-fluid
+		// END SIDEBAR
+		// BEGIN PAGE
+		#main-content
+			// BEGIN PAGE CONTAINER
+			#map-canvas.map
+				.visible#panel
+			// END PAGE CONTAINER
+		// END PAGE
+	// END CONTAINER
+	// BEGIN FOOTER
+	#footer
+		- var copyright = (new Date).getFullYear() + ' &copy; Wireless Emergency Alerts + @ CMU Silicon Valley'
+		!= copyright
+	// END FOOTER
+
+
+	// BEGIN JAVASCRIPTS
+	// Load Javascripts at bottom to reduce page load
+
+	// jQuery
+	script(src='lib/jquery.js')
+	script(src="lib/bootstrap/js/bootstrap.min.js")
+	script(src="lib/jquery.blockui.js")
+
+	// Backbone and dependencies
+	script(src='lib/lodash.min.js')
+	script(src='lib/backbone.js')
+	script(src="lib/backbone.stickit.js")
+	script(src='lib/tl.js')
+	script(src='lib/moment.min.js')
+
+	// Dynamic Tables
+	// script(type="text/javascript", src="assets/uniform/jquery.uniform.min.js")
+	script(type="text/javascript", src="lib/dataTables.min.js")
+
+	// Main App
+	script(type="text/javascript", src="lib/closure/goog/base.js")
+	script(type="text/javascript", src="lib/maps/ol.js")
+	script(type="text/javascript", src="lib/bootstrap-datetimepicker.js")
+	script(type="text/javascript", src="js/header.js")
+	script(type="text/javascript", src="js/open-maps.js")
+	script(type="text/javascript", src="js/phones.js")
+	script(type="text/javascript", src="js/table.js")
+	script(type="text/javascript", src="js/CAP.js")
+	script(type="text/javascript", src="js/info-window.js")
+	script(src="js/realTime.js")
+
+

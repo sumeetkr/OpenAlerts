@@ -1,0 +1,62 @@
+html {
+    overflow-y: scroll;
+}
+
+.form-group.required > label:after {
+    font-weight: bold;
+    color: red;
+    content: " *";
+}
+
+#options-input {
+    display: none;
+}
+
+#options-input input {
+    margin-bottom: 5px;
+    width: 80%;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+#add-option {
+    cursor: pointer;
+}
+
+input#question-mandatory {
+    width: 34px
+}
+
+.question .label {
+    margin-left: 10px;
+}
+
+.row.controls {
+    margin-bottom: 10px;
+}
+
+.available-questions, .selected-questions {
+    padding: 10px;
+    background-color: white;
+    min-height: 150px;
+}
+
+.select-question {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: lightblue;
+    cursor: pointer;
+    z-index: 9999;
+}
+
+.select-question > .question-id {
+    display: none;
+}
+
+td.alertId, td.imei {
+    width: 15%;
+}
+
+td.question, td.answer {
+    width: 35%;
+}

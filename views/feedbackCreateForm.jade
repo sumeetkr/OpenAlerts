@@ -1,0 +1,37 @@
+extends feedbackAdminLayout
+
+block content
+    .container.well
+        .row
+            h2.col-sm-12 Create a new form
+        if(isEdit)
+            form(action="/admin/feedback/form?id=#{form.id}", method="PUT")
+                .form-group.row.required
+                    label.control-label.col-sm-2(for="form-name") Name
+                    .col-sm-6
+                        input.form-control(type="text", id="question-name", name="name", placeholder="Some fancy name", required="required",  value="#{form.name}")
+                .form-group.row
+                    label.control-label.col-sm-2(for="form-questions") Questions
+                    .col-sm-10.select-questions
+                        include ./includes/questionSelect
+                .form-group.row
+                    .col-sm-offset-2.col-sm-6
+                        button.btn.btn-primary(type="submit") Submit
+        else
+            form(action="/admin/feedback/form", method="POST")
+                .form-group.row.required
+                    label.control-label.col-sm-2(for="form-name") Name
+                    .col-sm-6
+                        input.form-control(type="text", id="question-name", name="name", placeholder="Some fancy name", required="required",  value="#{form.name}")
+                .form-group.row
+                    label.control-label.col-sm-2(for="form-questions") Questions
+                    .col-sm-10.select-questions
+                        include ./includes/questionSelect
+                .form-group.row
+                    .col-sm-offset-2.col-sm-6
+                        button.btn.btn-primary(type="submit") Submit
+
+
+block scripts
+    script(src="https://code.jquery.com/ui/1.11.2/jquery-ui.js")
+    script(src="/js/feedback-create-form.js")

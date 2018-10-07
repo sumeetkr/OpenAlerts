@@ -1,0 +1,43 @@
+extends feedbackAdminLayout
+
+block content
+    .container.well
+        .row
+            h2.col-sm-12 Update a question
+        form(id="form" class="update")
+            input.form-control(type="hidden", name="id", value="#{question.id}")
+            .form-group.row.required
+                label.control-label.col-sm-2(for="question-title") Title
+                .col-sm-6
+                    input.form-control(type="text", id="question-title", name="title", placeholder="e.g. Was this alert useful?", required="required")
+            .form-group.row
+                label.control-label.col-sm-2(for="question-help-text") Help Text
+                .col-sm-6
+                    input.form-control(type="text", id="question-help-text", name="text", placeholder="e.g. Consider how useful this alert would have been in a real-life situation.")
+            .form-group.row
+                label.control-label.col-sm-2(for="question-mandatory") Mandatory
+                .col-sm-6
+                    input.form-control(type="checkbox", id="question-mandatory", name="mandatory")
+            .form-group.row
+                label.control-label.col-sm-2(for="question-help-text") Type
+                .col-sm-6
+                    select.form-control(id="question-type", name="type")
+                        option(value="TEXT") Text
+                        option(value="MULTIPLE") Multiple Answers
+                        option(value="SINGLE") Multiple Choice
+            #options-input.form-group.row
+                label.control-label.col-sm-2 Options
+                .col-sm-6
+                    .option
+                        input.form-control(type="text", name="options[]", placeholder="Option Name")
+                    .option.new-option
+                        input#add-option.form-control(type="text", placeholder="Click to add option", disabled="disabled")
+            .form-group.row
+                .col-sm-offset-2.col-sm-6
+                    button.btn.btn-primary(id="submit", type="submit") Submit
+
+block scripts
+    script(src="/js/feedback-update-question.js")
+
+    script(type="text/javascript").
+        question=!{JSON.stringify(question)}

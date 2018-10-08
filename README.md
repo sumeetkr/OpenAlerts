@@ -58,3 +58,11 @@ Harsh Alkutkar, [harsh.alkutkar@sv.cmu.edu](mailto:harsh.alkutkar@sv.cmu.edu)
 
 For Mobile application, check this repository:
 https://github.com/sumeetkr/WEAMobile
+
+
+## Citation
+If you use this repository please cite,
+
+Sumeet Kumar, Hakan Erdogmus, Bob Iannucci, Martin Griss, and João Diogo Falcão. 2018. Rethinking the Future of Wireless Emergency Alerts: A Comprehensive Study of Technical and Conceptual Improvements. Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 2, 2, Article 71 (July 2018), 33 pages. DOI: https://doi.org/10.1145/3214274
+
+And the OpenALerts paper. Citation for this coming soon.

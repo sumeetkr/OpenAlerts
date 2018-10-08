@@ -55,4 +55,6 @@ Harsh Alkutkar, [harsh.alkutkar@sv.cmu.edu](mailto:harsh.alkutkar@sv.cmu.edu)
 
 ## License
 
-TBD
+
+For Mobile application, check this repository:
+https://github.com/sumeetkr/WEAMobile

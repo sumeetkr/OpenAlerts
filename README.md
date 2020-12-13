@@ -34,6 +34,8 @@ Afterwards install the dependencies:
 For the first run, set the force flag in the above configuration to true.
 
 	node app.js
+	
+![Srver UI](https://github.com/sumeetkr/OpenAlerts/blob/master/server.jpg)	
 
 ## Contributors
 

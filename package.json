@@ -11,7 +11,7 @@
   "dependencies": {
     "async": "^0.9.0",
     "aws-sdk": "~2.1.17",
-    "express": "3.4.7",
+    "express": "4.17.3",
     "jade": "*",
     "lodash": "^3.5.0",
     "moment": "^2.10.2",
